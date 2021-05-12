@@ -13,7 +13,7 @@ class World:
         self.rules = {
             'die'    : [0, 1, 4, 5, 6, 7, 8],
             'survive': [2, 3],
-            'birth'  : [2]
+            'birth'  : [3]
             }
         self.initial_state = self.random_state()
     
@@ -57,15 +57,17 @@ class World:
                 elif board[r][c] == 1 and nb_neighbours in self.rules['die']:
                     next_board[r][c] = 0
                 elif board[r][c] == 0 and nb_neighbours in self.rules['birth']:
-                    next_board[r][c] = 1    
+                    next_board[r][c] = 1 
+                else:
+                    next_board[r][c] = 0
         return next_board
     
     def count_neighbours(self, r, c, board):
         nb_neighbours = 0
         for n in self.neighbours:
-            try:
+            if 0 <= r + n[0] < len(board) and 0 <= c + n[1] < len(board[0]):
                 nb_neighbours += board[r + n[0]][c + n[1]]
-            except IndexError:
+            else:
                 pass
         return nb_neighbours
 
