@@ -1,6 +1,6 @@
 ## Game of Life
 
-Let it run and observe this small simulated 'world' evolve from its random starting point. Will it reach equilibirum ?
+Let it run and observe this small simulated 'world' evolves from its random starting point. Will it reach equilibirum ?
 
 ### World rules:
 1. Any live cell with 0 or 1 live neighbour dies because of underpopulation
