@@ -70,14 +70,12 @@ class World:
         self.render(board)
 
         while True:
-            time.sleep(0.1)
+            time.sleep(0.05)
             board = self.next_state(board)
             os.system('cls' if os.name == 'nt' else 'clear')
             self.render(board)
 
-        
-
-            
+                   
 def main():
     world = World(150, 50)
     world.run()
